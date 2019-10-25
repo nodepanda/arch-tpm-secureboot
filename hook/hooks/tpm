@@ -1,0 +1,11 @@
+#!/bin/bash
+
+run_hook() {
+	ifconfig lo up
+	chown tss:tss /dev/tpm0
+	chown tss:tss /var/lib/tpm/system.data
+	chown tss:tss /etc/tcsd.conf
+	tcsd
+	sleep 1
+	tpm_nvread -i1 -s256 -f /crypto_keyfile.bin > /dev/null
+}
