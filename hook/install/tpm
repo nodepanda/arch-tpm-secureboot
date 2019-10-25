@@ -1,0 +1,17 @@
+#!/bin/bash
+
+build() {
+	add_module tpm
+	add_module tpm_infineon
+	add_module tpm_tis
+	add_module tpm_tis_core
+	add_binary tcsd
+	add_binary tpm_nvread
+	add_file /etc/passwd
+	add_file /etc/tcsd.conf
+	add_file /etc/group
+	add_file /etc/hosts
+	add_file /var/lib/tpm/system.data
+	add_runscript
+	add_file /usr/lib/libnss_files.so
+}
