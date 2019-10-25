@@ -1,0 +1,1 @@
+rw rootflags=subvol=root cryptdevice=/dev/sda2:root root=/dev/mapper/root quiet loglevel=0 rd.systemd.show_status=false rd.udev.log_priority=0
